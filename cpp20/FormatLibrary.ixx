@@ -34,6 +34,8 @@ export class FormatLibrary {
         std::cout << format("Outputting using library + [{:+5}]", 42) << std::endl;
         std::cout << format("Outputting using library space 42 [{: ^5}]", 42) << std::endl;
         std::cout << format("Outputting using library space-42 [{: ^5}]", -42) << std::endl;
+
+        std::cout << format("boolean {}", true) << std::endl;
     }
 
     static void typeFormats() noexcept
