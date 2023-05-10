@@ -10,6 +10,4 @@ include_directories(
   ./cpp20
 )
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET cppnewfeatures PROPERTY CXX_STANDARD 20)
-endif()
+target_compile_features(cppnewfeatures PUBLIC cxx_std_23)
