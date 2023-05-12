@@ -7,6 +7,8 @@ import ConstInit;
 import ConceptsLibrary;
 import CoroutineLibrary;
 import FormatLibrary;
+import RangesLibrary;
+import SpanLibrary;
 
 int main(int, char**) {
     std::cout << "helloJim" << std::endl;
@@ -18,5 +20,7 @@ int main(int, char**) {
     ConceptsLibrary::Run();
     CoroutineLibrary::Run();
     FormatLibrary::Run();
+    RangesLibrary::Run();
+    SpanLibrary::Run();
     return 0;
 }

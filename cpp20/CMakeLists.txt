@@ -6,7 +6,7 @@ project(cpp20)
 
 add_library(cpp20 DesignatedInitializers.ixx ThreewayComparision.ixx InitRangeBasedFor.ixx 
     InlineNamespaces.ixx ConstInit.ixx ConceptsLibrary.ixx FormatLibrary.ixx
-    CoroutineLibrary.ixx)
+    CoroutineLibrary.ixx RangesLibrary.ixx SpanLibrary.ixx)
 
 # PUBLIC needed to make both hello.h and hello library available elsewhere in project
 target_include_directories(${PROJECT_NAME}
