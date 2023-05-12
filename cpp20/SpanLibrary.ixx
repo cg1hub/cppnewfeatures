@@ -1,4 +1,7 @@
-// Good intro video https://www.youtube.com/watch?v=SYLgG7Q5Zws&ab_channel=CppCon
+// spans are non-owning views of contiguous sequences of objects.
+// They are used to pass arrays to functions without losing the information about the size of the array.
+// They are similar to string views though spans can also be used to modify the data.
+
 module;
 #include <array>
 #include <iostream>
@@ -14,24 +17,22 @@ using namespace std;
 export class SpanLibrary {
    static void RunSpans() noexcept
    {
-        constexpr char greeting[] = {'H','e','l','l','o','w','o','r','l','d','!'};
-        auto span = std::span{greeting}; // span is a view of the array
+        char greeting[] = {'H','e','l','l','o','w','o','r','l','d','!'};
+        auto span = std::span{greeting}; // span is a view of the array that can change the data as well.
 
+        std::cout << "printing the greeting via the span" << std::endl;
         for (auto c : span)
         {
             std::cout << std::format("{}",c);
         }
         std::cout << std::endl;
 
-        // This does not compile
-        // constexpr std::array<char, 10> greeting1 = {'H','e','l','l','o','w','o','r','l','d'};
-        // auto span1 = std::span{greeting1};
-
-        //  for (auto c : span1)
-        // {
-        //     std::cout << std::format("{}",c);
-        // }
-        // std::cout << std::endl;
+        std::cout << "Changing the greeting via the span" << std::endl;
+        span.back() = '1';
+        for (auto c : span)
+        {
+            std::cout << std::format("{}",c);
+        }
    }
 
 public:
